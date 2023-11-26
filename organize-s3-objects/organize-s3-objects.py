@@ -7,7 +7,8 @@ todays_date = today.strftime("%Y%m%d")
 def lambda_handler(event, context):
 
     s3_client = boto3.client('s3')
-
+    
+    # Change the bucket name if you want to use it with other s3 buckets
     bucket_name = "coby-organiz-s3-bucket"
     list_objects_response = s3_client.list_objects_v2(Bucket=bucket_name)
 
